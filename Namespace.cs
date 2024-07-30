@@ -2,6 +2,7 @@ using System;
 
 namespace Namespace1
 {
+    //https://atmarkit.itmedia.co.jp/fdotnet/csharp_abc/csharp_abc_002/csharp_abc03.html
     class Class1
     {
         public static void Hello()
