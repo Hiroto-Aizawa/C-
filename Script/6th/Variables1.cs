@@ -1,6 +1,8 @@
 
 namespace Variables1
 {
+    // https://atmarkit.itmedia.co.jp/fdotnet/csharp_abc/csharp_abc_006/csharp_abc01.html
+
     using System;
 
     public class TestClass : ICloneable
@@ -19,6 +21,9 @@ namespace Variables1
     {
         public static int Main(string[] args)
         {
+            // https://atmarkit.itmedia.co.jp/fdotnet/csharp_abc/csharp_abc_006/csharp_abc02.html
+            // 【第1～3の答】
+
             int testInt1, testInt2;
             testInt1 = 123;
             testInt2 = testInt1;
@@ -45,6 +50,9 @@ namespace Variables1
             Console.WriteLine("Answer3 testClass1a.n={0}, testClass2a.n={1}", testClass1a.n, testClass2a.n);
             // 予想：456 456
             // 結果：456 456
+
+            // https://atmarkit.itmedia.co.jp/fdotnet/csharp_abc/csharp_abc_006/csharp_abc03.html
+            // 【第4～6の答】
 
             TestClass testClass1b, testClass2b;
             testClass1b = new TestClass();
