@@ -72,8 +72,10 @@ namespace Variables1
             // 結果：456 123
 
             object testObject1, testObject2;
+            // newと同じ処理が走る
             testObject1 = 123;
             testObject2 = testObject1;
+            // newと同じ処理が走る
             testObject1 = 456;
             Console.WriteLine("Answer6 testObject1={0}, testObject2={1}", testObject1, testObject2);
             // 予想：456 456
