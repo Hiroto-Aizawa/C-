@@ -1,7 +1,7 @@
 namespace CastAndDataConversion1
 {
     // https://atmarkit.itmedia.co.jp/fdotnet/csharp_abc/csharp_abc_007/csharp_abc03.html
-    
+
     using System;
     public class Class1
     {
@@ -44,7 +44,7 @@ namespace CastAndDataConversion2
         {
             // 【無関係の参照型へのキャスト】
 
-            
+
             Class1 c = new Class1();
             c.hello = "Hello!";
             object o = (object)c;
@@ -60,6 +60,30 @@ namespace CastAndDataConversion2
             // [ERROR] FATAL UNHANDLED EXCEPTION: System.InvalidCastException: Specified cast is not valid.
             //   at ConsoleApplication11.Class1.Main (System.String[] args) [0x00013] in <fdc616ebbbca43c08f364d635b2f19ff>:0 
 
+            return 0;
+        }
+    }
+}
+
+namespace ConsoleApplication11
+{
+    using System;
+    public class Class2
+    {
+        public String hello;
+    }
+    public class Class1 : Class2
+    {
+        //public String hello;
+        public static int Main(string[] args)
+        {
+            // 【スーパークラスへのキャスト】
+
+            Class1 c = new Class1();
+            c.hello = "Hello!";
+            object o = (object)c;
+            Class2 c2 = (Class2)o;
+            Console.WriteLine("{0},{1}", c.hello, c2.hello);
             return 0;
         }
     }
