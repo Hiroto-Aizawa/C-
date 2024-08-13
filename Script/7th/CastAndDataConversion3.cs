@@ -65,7 +65,7 @@ namespace CastAndDataConversion2
     }
 }
 
-namespace ConsoleApplication11
+namespace CastAndDataConversion3
 {
     using System;
     public class Class2
@@ -74,7 +74,9 @@ namespace ConsoleApplication11
     }
     public class Class1 : Class2
     {
+
         //public String hello;
+
         public static int Main(string[] args)
         {
             // 【スーパークラスへのキャスト】
@@ -82,8 +84,38 @@ namespace ConsoleApplication11
             Class1 c = new Class1();
             c.hello = "Hello!";
             object o = (object)c;
+            // Class1をobjectにキャストしたものをClass2にキャスト
+            // Class2はClass1のスーパークラスなのでこのキャストはエラーにならない
             Class2 c2 = (Class2)o;
+            // Class2のhello変数とClass1のhello変数は同一のもの
+            // 78行目のコメントを外すと、同じ変数が重複定義しているとコンパイルエラーになる
             Console.WriteLine("{0},{1}", c.hello, c2.hello);
+            // 出力結果
+            // Hello!,Hello!
+            return 0;
+        }
+    }
+}
+
+namespace CastAndDataConversion4
+{
+    using System;
+    public class Class1
+    {
+        public static int Main(string[] args)
+        {
+            // アンボクシングとキャスト
+            // アンボクシング = ボクシングしたデータを元のデータ型で取り出すこと
+            // ボクシング / アンボクシングはデータ型が変わるのでキャストとの関係が発生する
+
+            int i = 123;
+            // int型からobject型へのボクシング
+            // 暗黙的なキャストでも問題ない
+            object o = i;
+            // object型からint型へのアンボクシング
+            // 明示的なキャストが必要とされる
+            int j = (int)o;
+            Console.WriteLine("{0},{1},{2}", i, o, j);
             return 0;
         }
     }
