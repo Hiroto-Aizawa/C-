@@ -1,3 +1,5 @@
+// https://atmarkit.itmedia.co.jp/fdotnet/csharp_abc/csharp_abc_010/csharp_abc02.html
+
 using System;
 
 namespace Space1.Sub1
