@@ -57,3 +57,37 @@ namespace IndexerAndProperty1
         }
     }
 }
+
+namespace IndexerAndProperty2
+{
+    using System;
+
+    class Class2
+    {
+        private char[] a = { 'A', 'B', 'C' };
+        public char this[int index]
+        {
+            get
+            {
+                return a[index];
+            }
+        }
+    }
+    class Class1
+    {
+        static void Main(string[] args)
+        {
+            Class2 t = new Class2();
+            for (int i = 0; i < 3; i++)
+            {
+                Console.WriteLine(t[i]);
+            }
+            //t[0] = 'X';   // プロパティまたはインデクサ 'ConsoleApplication41.Class2.this[int]' は読み取り専用なので割り当てることはできません。
+
+            // 出力結果
+            // A
+            // B
+            // C
+        }
+    }
+}
