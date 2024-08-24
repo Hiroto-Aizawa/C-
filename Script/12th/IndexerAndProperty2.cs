@@ -29,7 +29,6 @@ namespace IndexerAndProperty1
         {
             // 【インデクサを自作する】
 
-            // 
             Class2 t = new Class2();
 
             for (int i = 0; i < 3; i++)
@@ -67,6 +66,7 @@ namespace IndexerAndProperty2
         private char[] a = { 'A', 'B', 'C' };
         public char this[int index]
         {
+            // getしかないため値を出力する機能しかない
             get
             {
                 return a[index];
@@ -77,6 +77,8 @@ namespace IndexerAndProperty2
     {
         static void Main(string[] args)
         {
+            // 【読み出し専用インデクサ】
+
             Class2 t = new Class2();
             for (int i = 0; i < 3; i++)
             {
@@ -88,6 +90,37 @@ namespace IndexerAndProperty2
             // A
             // B
             // C
+        }
+    }
+}
+
+namespace IndexerAndProperty3
+{
+    using System;
+    using System.Collections;
+
+    class Class1
+    {
+        static void Main(string[] args)
+        {
+            // 【数値以外で指定するインデクサ】
+
+            // インデクサの[]内の値が整数とは限らない
+            // .NET Frameworkに標準で含まれるHashtable(System.Collections.Hashtable)クラスを用いた記述
+            Hashtable h = new Hashtable();
+            // Hashtableクラスのインデクサは
+            // 読み書きする値、添え字もobject型として定義されている
+            // 文字列で指定する配列を連想配列という
+            h["斉藤"] = "Windows 2000";
+            h["田中"] = "Windows 98";
+            h["鈴木"] = "FreeBSD";
+            Console.WriteLine(h["斉藤"]);
+            Console.WriteLine(h["田中"]);
+            Console.WriteLine(h["鈴木"]);
+            // 出力結果
+            // Windows 2000
+            // Windows 98
+            // FreeBSD
         }
     }
 }
