@@ -26,3 +26,39 @@ namespace EventFunction1
         }
     }
 }
+
+namespace systemLibrary
+{
+    using System;
+    
+  abstract class ClassBase
+  {
+    public abstract void onEvenet();
+  }
+  class ClassLibrary
+  {
+    public static void fireEvent( ClassBase instance )
+    {
+      instance.onEvenet();
+    }
+  }
+}
+
+namespace userProgram
+{
+  class ClassDelived : systemLibrary.ClassBase
+  {
+    public override void onEvenet()
+    {
+      Console.WriteLine("onEvent called");
+    }
+  }
+  class Class1
+  {
+    static void Main(string[] args)
+    {
+      ClassDelived instance = new ClassDelived();
+      systemLibrary.ClassLibrary.fireEvent( instance );
+    }
+  }
+}
