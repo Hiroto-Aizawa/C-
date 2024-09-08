@@ -24,3 +24,22 @@ namespace ConsoleApplication73
         }
     }
 }
+
+namespace ConsoleApplication74
+{
+    using System;
+    
+    class Class1
+    {
+        static void Main(string[] args)
+        {
+            int[] ar1 = new int[4] { 0, 1, 2, 3 };
+            int[] ar2 = new int[] { 0, 1, 2, 3 };
+            int[] ar3 = { 0, 1, 2, 3 };
+            for (int i = 0; i < 4; i++)
+            {
+                Console.WriteLine("{0},{1},{2}", ar1[i], ar2[i], ar3[i]);
+            }
+        }
+    }
+}
