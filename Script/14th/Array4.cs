@@ -1,3 +1,5 @@
+// https://atmarkit.itmedia.co.jp/fdotnet/csharp_abc/csharp_abc_014/csharp_abc04.html
+
 namespace Array1
 {
     using System;
