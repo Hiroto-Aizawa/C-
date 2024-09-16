@@ -35,7 +35,47 @@ namespace Interface1
         {
             // 【インターフェイスの効能】
 
-            
+
+            Class2 c2 = new Class2();
+            Class3 c3 = new Class3();
+            callTask(c2);
+            callTask(c3);
+        }
+    }
+}
+
+namespace Interface2
+{
+    using System;
+
+    abstract class ClassSpecialTask
+    {
+        public abstract void task();
+    }
+    class Class2 : ClassSpecialTask
+    {
+        public override void task()
+        {
+            Console.WriteLine("task() in Class2");
+        }
+    }
+    class Class3 : ClassSpecialTask
+    {
+        public override void task()
+        {
+            Console.WriteLine("task() in Class3");
+        }
+    }
+    class Class1
+    {
+        static void callTask(ClassSpecialTask ist)
+        {
+            ist.task();
+        }
+        static void Main(string[] args)
+        {
+            // 【軽症で実現した例】
+
             Class2 c2 = new Class2();
             Class3 c3 = new Class3();
             callTask(c2);
