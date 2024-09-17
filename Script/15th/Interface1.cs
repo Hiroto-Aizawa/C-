@@ -27,6 +27,9 @@ namespace Interface1
 
     class Class1
     {
+        // インターフェイスの共有
+        // 引数としてISpecialTaskを参照する
+        // ISpecialTaskを継承したクラスからは必ずインターフェイスへの参照を取得できる
         static void callTask(ISpecialTask ist)
         {
             ist.task();
@@ -35,11 +38,13 @@ namespace Interface1
         {
             // 【インターフェイスの効能】
 
-
             Class2 c2 = new Class2();
             Class3 c3 = new Class3();
             callTask(c2);
             callTask(c3);
+            // 出力結果
+            // task() in Class2
+            // task() in Class3
         }
     }
 }
