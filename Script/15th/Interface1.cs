@@ -88,3 +88,59 @@ namespace Interface2
         }
     }
 }
+
+namespace Interface2_2
+{
+    using System;
+
+    interface ISpecialTask1
+    {
+        void task1();
+    }
+    interface ISpecialTask2
+    {
+        void task2();
+    }
+    class Class2 : ISpecialTask1, ISpecialTask2
+    {
+        public void task1()
+        {
+            Console.WriteLine("task1() in Class2");
+        }
+        public void task2()
+        {
+            Console.WriteLine("task2() in Class2");
+        }
+    }
+    class Class3 : ISpecialTask1, ISpecialTask2
+    {
+        public void task1()
+        {
+            Console.WriteLine("task1() in Class3");
+        }
+        public void task2()
+        {
+            Console.WriteLine("task2() in Class3");
+        }
+    }
+    class Class1
+    {
+        static void callTask1(ISpecialTask1 ist)
+        {
+            ist.task1();
+        }
+        static void callTask2(ISpecialTask2 ist)
+        {
+            ist.task2();
+        }
+        static void Main(string[] args)
+        {
+            Class2 c2 = new Class2();
+            Class3 c3 = new Class3();
+            callTask1(c2);
+            callTask1(c3);
+            callTask2(c2);
+            callTask2(c3);
+        }
+    }
+}
