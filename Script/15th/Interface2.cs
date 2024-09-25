@@ -24,6 +24,7 @@ namespace Interface1
         }
         static void Main(string[] args)
         {
+            // 【インターフェイスの継承】
             Class1 c1 = new Class1();
             c1.task1();
             c1.task2();
@@ -31,10 +32,10 @@ namespace Interface1
     }
 }
 
-using System;
-
-namespace ConsoleApplication97
+namespace Interface2
 {
+    using System;
+
     public delegate void SampleEvent(object sender, EventArgs e);
     public interface ISample
     {
@@ -71,6 +72,8 @@ namespace ConsoleApplication97
         }
         static void Main(string[] args)
         {
+            // 【プロパティ、インデクサ、イベントとインターフェイス】
+
             Class1 c1 = new Class1();
             c1.SampleProperty = 123;
             c1[0] = "ABC";
