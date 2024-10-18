@@ -1,8 +1,9 @@
-using System;
-using System.Collections;
+// https://atmarkit.itmedia.co.jp/fdotnet/csharp_abc/csharp_abc_015/csharp_abc04.html
 
-namespace ConsoleApplication100
+namespace Interface1
 {
+    using System;
+    using System.Collections;
     class ClassSample : IComparable
     {
         public string number;
@@ -34,6 +35,42 @@ namespace ConsoleApplication100
             foreach (ClassSample cs in al)
             {
                 Console.WriteLine(cs.number);
+            }
+        }
+    }
+}
+
+
+
+namespace Interfaec2
+{
+    using System;
+    using System.Collections;
+
+    class ClassComparer : IComparer
+    {
+        public int Compare(object x, object y)
+        {
+            double dx = (double)x;
+            double dy = (double)y;
+            return (int)dx - (int)dy;
+        }
+    }
+    class Class1
+    {
+        static void Main(string[] args)
+        {
+            ArrayList al = new ArrayList();
+            al.Add(2.2);
+            al.Add(3.7);
+            al.Add(1.5);
+            al.Add(2.7);
+            al.Add(3.2);
+            al.Add(1.1);
+            al.Sort(new ClassComparer());
+            foreach (double d in al)
+            {
+                Console.WriteLine(d);
             }
         }
     }
