@@ -40,7 +40,7 @@ namespace Enumeration1
     }
 }
 
-namespace Enumeration1
+namespace Enumeration2
 {
     using System;
     enum Era
@@ -55,6 +55,27 @@ namespace Enumeration1
         static void Main(string[] args)
         {
             Era t = Era.Taisho;
+            Console.WriteLine(t);
+        }
+    }
+}
+
+namespace Enumeration3
+{
+    using System;
+
+    enum Era
+    {
+        明治,
+        大正,
+        昭和,
+        平成
+    }
+    class Class1
+    {
+        static void Main(string[] args)
+        {
+            Era t = Era.大正;
             Console.WriteLine(t);
         }
     }
