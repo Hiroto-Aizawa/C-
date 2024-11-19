@@ -10,7 +10,7 @@ namespace Inheritance1
         public string getName()
         {
             //return "私には名前がありません。";
-            return "I don’t have a name.";
+            return "I don't have a name.";
         }
     }
 
@@ -37,6 +37,10 @@ namespace Inheritance1
             Console.WriteLine(taro.getName());
             Console.WriteLine(taro.getTaroName());
             return 0;
+            // 出力結果
+            // I don't have a name. //PersonクラスのgetName()の実行結果
+            // I don't have a name. //Personクラスを継承したTaroクラスのgetName()の実行結果
+            // My name is Taro.     //TaroクラスのgetTaroName()の実行結果
         }
     }
 }

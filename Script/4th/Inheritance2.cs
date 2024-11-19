@@ -10,7 +10,7 @@ namespace Inheritance2
         public string getName()
         {
             //return "私には名前がありません。";
-            return "I don’t have a name.";
+            return "I don't have a name.";
         }
     }
 
@@ -28,24 +28,28 @@ namespace Inheritance2
 
     public class Class1
     {
-        // public static int Main(string[] args)
-        // {
-        //     Person person = new Person();
-        //     Console.WriteLine(person.getName());
+        public static int Main(string[] args)
+        {
+            Person person = new Person();
+            Console.WriteLine(person.getName());
 
-        //     // Personクラスを継承したTaroクラスをインスタンス化
-        //     Taro taro = new Taro();
-        //     //Taroクラスで新たに定義したgetName関数を呼ぶ
-        //     Console.WriteLine(taro.getName());
+            // Personクラスを継承したTaroクラスをインスタンス化
+            Taro taro = new Taro();
+            //Taroクラスで新たに定義したgetName関数を呼ぶ
+            Console.WriteLine(taro.getName());
 
-        //     // Person型のsomeoneにTaroクラスのインスタンスを作成し、格納する
-        //     // この場合、TaroクラスのgetName関数ではなく、PersonクラスのgetName関数が呼ばれる
-        //     // newキーワードを用いた置き換えは万能ではない
-        //     Person someone = new Taro();
-        //     Console.WriteLine(someone.getName());
+            // Person型のsomeoneにTaroクラスのインスタンスを作成し、格納する
+            // この場合、TaroクラスのgetName関数ではなく、PersonクラスのgetName関数が呼ばれる
+            // newキーワードを用いた置き換えは万能ではない
+            Person someone = new Taro();
+            Console.WriteLine(someone.getName());
 
-        //     return 0;
-        // }
+            return 0;
+            // 出力結果
+            // I don't have a name.
+            // My name is Taro.
+            // I don't have a name.
+        }
     }
 }
 
@@ -61,7 +65,7 @@ namespace Inheritance3
         public virtual string getName()
         {
             //return "私には名前がありません。";
-            return "I don’t have a name.";
+            return "I don't have a name.";
         }
     }
 
@@ -95,6 +99,10 @@ namespace Inheritance3
             Console.WriteLine(someone.getName());
 
             return 0;
+            // 出力結果
+            // I don't have a name.
+            // My name is Taro.
+            // My name is Taro.
         }
     }
 }
