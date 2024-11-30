@@ -80,3 +80,23 @@ namespace Enumeration3
         }
     }
 }
+
+namespace Enumeration4
+{
+    using System;
+    enum Era
+    {
+        Meiji,
+        Taisho,
+        Showa,
+        Heisei,
+    }
+    class Class1
+    {
+        static void Main(string[] args)
+        {
+            Era t = Era.Taisho;
+            Console.WriteLine(t);
+        }
+    }
+}
