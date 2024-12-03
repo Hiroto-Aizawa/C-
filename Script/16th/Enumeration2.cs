@@ -45,3 +45,35 @@ namespace Enumeration2
         }
     }
 }
+
+
+namespace Enumeration3
+{
+    using System;
+    class Class2
+    {
+        private enum Era
+        {
+            Meiji,
+            Taisho
+        }
+        public static void WriteMeiji()
+        {
+            Console.WriteLine(Class2.Era.Meiji);
+        }
+    }
+    class Class1
+    {
+        enum Era
+        {
+            Showa,
+            Heisei
+        }
+        static void Main(string[] args)
+        {
+            //Console.WriteLine( Class2.Era.Meiji );  //エラー 'ConsoleApplication7.Class2.Era' はアクセスできない保護レベルになっています。
+            Class2.WriteMeiji();
+            Console.WriteLine(Class1.Era.Showa);
+        }
+    }
+}
